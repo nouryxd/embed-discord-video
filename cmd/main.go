@@ -24,12 +24,13 @@ func Index(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
         <meta charset="UTF-8" />
         <meta name="description" content="" />
     </head>
+
     <body style="background-color:#181a1b;">
     <h1 style="color:#d8d4cf">Discord Video Embedder</h1>
     <p style="color:#d8d4cf">Lets you watch a discord video in the browser instead of downloading it by default. <br>
     Simply paste the link to a discord video at the end of the url (after the /, if there is none add one).
     </p>
-    <p style="color:#d8d4cf">Original: <a style="color:#3391ff" href="%s/%s">%s/%s</a></p>
+	<p style="color:#d8d4cf">Like this:: <a style="color:#3391ff" href="%s/%s">%s/%s</a></p>
     <p style="color:#d8d4cf"><sup>this is beautiful web design shut up</sup></p>
     </body>
 </html>

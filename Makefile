@@ -3,3 +3,7 @@ build:
 
 run:
 	./cmd/EmbedDiscordVideo
+
+dev:
+	cd cmd && go build -o EmbedDiscordVideo
+	./cmd/EmbedDiscordVideo
