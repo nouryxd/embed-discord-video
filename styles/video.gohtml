@@ -1,0 +1,21 @@
+<html>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <title>Discord Video Embedder</title>
+        <meta charset="UTF-8" />
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+
+    <body style="background-color:#181a1b; max-width: 0 auto;">
+    <p>
+	<video style="height:80%%;"
+        controls
+        autoplay
+        src="{{ .VideoUrl }}"
+    />
+    </p>
+    <p style="color:#d8d4cf">Original: <a style="color:#3391ff" href="{{ .VideoUrl }}">{{ .VideoUrl }}</a></p>
+    </body>
+</html>
