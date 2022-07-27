@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"html/template"
 	"log"
 	"net/http"
 	"strings"
@@ -12,32 +13,20 @@ import (
 var HOST = "https://dc.noury.ee"
 var PORT = "8080"
 
+type Data struct {
+	Host     string
+	VideoUrl string
+}
+
 func Index(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
-	var videoUrl = "https://cdn.discordapp.com/attachments/381520882608373761/989666371178754068/denkcats_1639474686233272.mp4"
+	tmpl := template.Must(template.ParseFiles("styles/index.gohtml"))
 
-	var indexHtml = fmt.Sprintf(`
-<html>
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <title>Discord Video Embedder</title>
-        <meta charset="UTF-8" />
-        <meta name="description" content="" />
-    </head>
+	data := Data{
+		Host:     HOST,
+		VideoUrl: "https://cdn.discordapp.com/attachments/381520882608373761/989666371178754068/denkcats_1639474686233272.mp4",
+	}
 
-    <body style="background-color:#181a1b;">
-    <h1 style="color:#d8d4cf">Discord Video Embedder</h1>
-    <p style="color:#d8d4cf">Lets you watch a discord video in the browser instead of downloading it by default. <br>
-    Simply paste the link to a discord video at the end of the url (after the /, if there is none add one).
-    </p>
-	<p style="color:#d8d4cf">Like this: <a style="color:#3391ff" href="%s/%s">%s/%s</a></p>
-	<p style="color:#d8d4cf">Source: <a style="color:#3391ff" href="https://github.com/noury-ee/embed-discord-video">https://github.com/noury-ee/embed-discord-video</a></p>
-    <p style="color:#d8d4cf"><sup>this is beautiful web design shut up</sup></p>
-    </body>
-</html>
-`, HOST, videoUrl, HOST, videoUrl)
-
-	fmt.Fprintf(w, "%s", indexHtml)
+	tmpl.Execute(w, data)
 }
 
 func Video(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
@@ -51,30 +40,13 @@ func Video(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 func RenderVideo(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 	var videoUrl = strings.TrimPrefix(ps.ByName("video"), "/")
 
-	var videoHtml = fmt.Sprintf(`
-<html>
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <title>Discord Video Embedder</title>
-        <meta charset="UTF-8" />
-        <meta name="description" content="" />
-    </head>
-    <body style="background-color:#181a1b;">
-    <p>
-	<video style="height:80%%;width:auto"
-        controls
-        autoplay
-        src="%s"
-    />
-    </p>
-    <p style="color:#d8d4cf">Original: <a style="color:#3391ff" href="%s">%s</a></p>
-    </body>
-</html>
-    `, videoUrl, videoUrl, videoUrl)
+	tmpl := template.Must(template.ParseFiles("styles/video.gohtml"))
 
-	// fmt.Fprint(w, videoHtml)
-	fmt.Fprintf(w, "%s", videoHtml)
+	data := Data{
+		VideoUrl: videoUrl,
+	}
+
+	tmpl.Execute(w, data)
 }
 
 func main() {
