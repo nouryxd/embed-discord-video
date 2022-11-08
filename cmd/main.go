@@ -23,7 +23,7 @@ func Index(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 
 	data := Data{
 		Host:     HOST,
-		VideoUrl: "https://cdn.discordapp.com/attachments/381520882608373761/989666371178754068/denkcats_1639474686233272.mp4",
+		VideoUrl: "https://cdn.discordapp.com/attachments/1004882628140339281/1039659891310198845/namnam.mp4",
 	}
 
 	tmpl.Execute(w, data)
