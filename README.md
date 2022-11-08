@@ -4,7 +4,7 @@ Lets you watch a discord video in the browser instead of downloading it by defau
 
 Simply paste the link to a discord video at the end of the url. 
 
-Like this:  [https://dc.noury.ee/https://cdn.discordapp.com/attachments/381520882608373761/989666371178754068/denkcats_1639474686233272.mp4](https://dc.noury.ee/https://cdn.discordapp.com/attachments/381520882608373761/989666371178754068/denkcats_1639474686233272.mp4)
+Like this:  [https://dc.noury.ee/https://cdn.discordapp.com/attachments/1004882628140339281/1039659891310198845/namnam.mp4](https://dc.noury.ee/https://cdn.discordapp.com/attachments/1004882628140339281/1039659891310198845/namnam.mp4)
 
 ## Install
 ### With docker-compose.yml
