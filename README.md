@@ -4,13 +4,13 @@ Lets you watch a discord video in the browser instead of downloading it by defau
 
 Simply paste the link to a discord video at the end of the url. 
 
-Like this:  [https://dc.noury.ee/https://cdn.discordapp.com/attachments/1004882628140339281/1039659891310198845/namnam.mp4](https://dc.noury.ee/https://cdn.discordapp.com/attachments/1004882628140339281/1039659891310198845/namnam.mp4)
+Like this:  [https://dc.dank.pw/https://cdn.discordapp.com/attachments/1004882628140339281/1039659891310198845/namnam.mp4](https://dc.dank.pw/https://cdn.discordapp.com/attachments/1004882628140339281/1039659891310198845/namnam.mp4)
 
 ## Install
 ### With docker-compose.yml
 Clone the repo:
 ```sh
-$ git clone https://github.com/noury-ee/embed-discord-video.git
+$ git clone https://github.com/lyx0/embed-discord-video.git
 ```
 
 Change the `7352` port value in the `docker-compose.yml` to the port you want to run it on with nginx/caddy.
@@ -34,7 +34,7 @@ $ sudo docker compose up -d
 ### Manually
 Clone the repo:
 ```sh
-$ git clone https://github.com/noury-ee/embed-discord-video.git
+$ git clone https://github.com/lyx0/embed-discord-video.git
 ```
 Change the `PORT` value in `cmd/main.go` to the port you want to run it on with nginx/caddy.
 ```go

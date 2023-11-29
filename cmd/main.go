@@ -10,7 +10,7 @@ import (
 	"github.com/julienschmidt/httprouter"
 )
 
-var HOST = "https://dc.noury.ee"
+var HOST = "https://dc.dank.pw"
 var PORT = "8080"
 
 type Data struct {
