@@ -22,8 +22,7 @@ func Index(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 	tmpl := template.Must(template.ParseFiles("styles/index.gohtml"))
 
 	data := Data{
-		Host:     HOST,
-		VideoUrl: "https://cdn.discordapp.com/attachments/1004882628140339281/1039659891310198845/namnam.mp4",
+		Host: HOST,
 	}
 
 	tmpl.Execute(w, data)
