@@ -10,7 +10,7 @@ Like this:  [https://dc.dank.pw/https://cdn.discordapp.com/attachments/100488262
 ### With docker-compose.yml
 Clone the repo:
 ```sh
-$ git clone https://github.com/lyx0/embed-discord-video.git
+$ git clone https://github.com/nouryxd/embed-discord-video.git
 ```
 
 Change the `7352` port value in the `docker-compose.yml` to the port you want to run it on with nginx/caddy.
@@ -34,7 +34,7 @@ $ sudo docker compose up -d
 ### Manually
 Clone the repo:
 ```sh
-$ git clone https://github.com/lyx0/embed-discord-video.git
+$ git clone https://github.com/nouryxd/embed-discord-video.git
 ```
 Change the `PORT` value in `cmd/main.go` to the port you want to run it on with nginx/caddy.
 ```go

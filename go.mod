@@ -1,4 +1,4 @@
-module github.com/noury-ee/embed-discord-video
+module github.com/nouryxd/embed-discord-video
 
 go 1.18
 
